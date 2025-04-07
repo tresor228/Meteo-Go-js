@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #5b6ce8, #368dc7);
+  color: #333;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.search-box {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+#city-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+#search-button {
+  padding: 12px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#search-button:hover {
+  background-color: #2980b9;
+}
+
+.weather-container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.weather-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.weather-icon img {
+  width: 80px;
+  height: 80px;
+}
+
+.weather-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.temperature, .description, .humidity, .wind {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f7f9fc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.temperature {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.description {
+  text-transform: capitalize;
+}
+
+.fas {
+  color: #3498db;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Animation de chargement */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.loading {
+  animation: pulse 1.5s infinite;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container {
+      width: 90%;
+      padding: 20px;
+  }
+  
+  .weather-info {
+      grid-template-columns: 1fr;
+  }
+}
